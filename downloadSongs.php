@@ -8,7 +8,7 @@ function download ($url, $timeout=1, $times=-1) {
 $json = json_decode(file_get_contents(
 	"KurdishLyricsCorpus.json"), TRUE);
 $list = $json["lyrics"];
-mdir($output, 0755, TRUE);
+mkdir($output, 0755, TRUE);
 for($i = 0; $i < count($list); $i++) {
 	$item = $list[$i];
 	$audio = $item["div"]["audio"];
